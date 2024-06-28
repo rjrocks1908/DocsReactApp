@@ -20,12 +20,12 @@ class AuthRepository {
       );
 
       if (user) {
-        this.login({ email, password });
+        return await this.login({ email, password });
       } else {
-        return user;
+        return null;
       }
     } catch (error) {
-      console.log("Appwrite service :: registerUser :: error", error);
+      throw error.message;
     }
   }
 
@@ -37,7 +37,7 @@ class AuthRepository {
       );
       return session;
     } catch (error) {
-      console.log("Appwrite service :: login :: error", error);
+      throw error.message;
     }
   }
 
@@ -51,7 +51,7 @@ class AuthRepository {
 
   async logout() {
     try {
-      return await this.account.deleteSession();
+      await this.account.deleteSessions();
     } catch (error) {
       console.log("Appwrite service :: logout :: error", error);
     }
