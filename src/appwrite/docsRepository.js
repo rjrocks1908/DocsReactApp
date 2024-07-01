@@ -11,7 +11,7 @@ class DocsRepository {
     this.storage = new Storage(this.client);
   }
 
-  async createDoc({ title, description, filesize, cardColor }) {
+  async createDoc({ title, description, filesize, fileId, cardColor }) {
     try {
       const result = await this.databases.createDocument(
         conf.appwriteDatabaseId,
@@ -22,6 +22,7 @@ class DocsRepository {
           description,
           filesize,
           cardColor,
+          file: fileId,
         }
       );
       return result;
@@ -85,7 +86,7 @@ class DocsRepository {
     }
   }
 
-  async deleteDoc(fileId) {
+  async deleteFile(fileId) {
     try {
       return this.storage.deleteFile(conf.appwriteBucketId, fileId);
     } catch (error) {

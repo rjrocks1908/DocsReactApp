@@ -4,6 +4,7 @@ import { authRepository } from "./appwrite/authRepository.js";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./store/authSlice";
 import { Outlet } from "react-router-dom";
+import Loader from "./components/Loader.jsx";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,9 +31,7 @@ function App() {
   return (
     <div className="relative w-full h-screen bg-zinc-800">
       <Background />
-      <main>
-        {loader ? <div>Loading...</div> : <Outlet />}
-      </main>
+      <main>{loader ? <Loader /> : <Outlet />}</main>
     </div>
   );
 }

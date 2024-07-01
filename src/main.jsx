@@ -8,7 +8,7 @@ import store from "./store/store.js";
 import AuthLayout from "./AuthLayout.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
-import Foreground from "./components/Foreground.jsx";
+import Foreground from "./pages/Foreground.jsx";
 
 const router = createBrowserRouter([
   {
