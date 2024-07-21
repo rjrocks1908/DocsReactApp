@@ -12,11 +12,11 @@ import Foreground from "./pages/Foreground.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/DocsReactApp",
+    path: "/",
     element: <App />,
     children: [
       {
-        path: "login",
+        path: "/login",
         element: (
           <AuthLayout authentication={false}>
             <Login />
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "register",
+        path: "/register",
         element: (
           <AuthLayout authentication={false}>
             <Register />
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "",
+        path: "/",
         element: (
           <AuthLayout authentication={true}>
             <Foreground />
