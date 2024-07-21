@@ -12,7 +12,7 @@ import Foreground from "./pages/Foreground.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/DocsReactApp",
     element: <App />,
     children: [
       {
